@@ -2,8 +2,9 @@ import React from 'react';
 import {Provider} from "react-redux";
 import logo from './logo.svg';
 import './App.css';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import Counter from "./components/counter";
+import thunk from 'redux-thunk';
 
 const initialState = {
   count: 0
@@ -30,7 +31,7 @@ function reducer(state = initialState, action) {
   }
 }
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 function App() {
   return (
