@@ -9,6 +9,8 @@ class Reset extends Component {
     }
 
     render() {
+        console.log("reset render()");
+
         return (
             <div className = "button" onClick={this.resetCounter}>
                 Reset  {this.props.count}
@@ -19,10 +21,10 @@ class Reset extends Component {
 
 
 function mapStateToProps(state) {
-    console.log("reset map state :");
+    console.log("reset map state :", state);
 
     return {
-      count: state.count
+      count: state.resetReducer.count
     };
   }
 

@@ -35,7 +35,7 @@ function resetReducer(state = initialState, action){
   switch(action.type) {
     case 'RESET':
       return {
-        count: 0
+        count: state.count + 1
       };
     default:
       return state;

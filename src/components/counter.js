@@ -13,6 +13,7 @@ class Counter extends Component {
     } 
 
     render() {
+        console.log("counter render()");
         return (
             <div>
                 <h3>Counter</h3>
@@ -32,7 +33,7 @@ class Counter extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log("counter map state :");
+    console.log("counter map state :", state);
     return {
       count: state.reducer.count
     };
