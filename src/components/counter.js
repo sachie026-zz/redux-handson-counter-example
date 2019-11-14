@@ -4,6 +4,7 @@ import { increment, decrement } from '../redux-store/actions';
 
 class Counter extends Component {
     increment = () => {
+        console.log("counter inc action dispatcher:");
         this.props.increment();
     } 
 
@@ -31,8 +32,9 @@ class Counter extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log("counter map state :");
     return {
-      count: state.count
+      count: state.reducer.count
     };
   }
 
