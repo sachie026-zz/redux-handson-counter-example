@@ -1,9 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import  { increment, decrement , INCREMENT, DECREMENT}  from "./redux-store/actions"
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe("action creator test", () => {
+  it("action creator for increment", () => {
+    const testINC = {
+      type: INCREMENT
+    }
+    Object.is(increment(), testINC);
+  })
+
+  it("action creator for decrement", () => {
+    const testINC = {
+      type: DECREMENT
+    }
+    Object.is(decrement(), testINC);
+  })
+})
